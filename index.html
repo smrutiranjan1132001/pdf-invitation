@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .envelope {
+            width: 150px;
+            height: 150px;
+            background: url('https://image.shutterstock.com/image-vector/envelope-icon-vector-mail-symbol-260nw-1895748055.jpg') no-repeat center/contain;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+
+        .image-container,
+        .venue-button {
+            display: none;
+            text-align: center;
+        }
+
+        #venueContainer {
+            display: none;
+            text-align: center;
+        }
+
+        #firstImage,.venue-image {
+            max-width: 80%;
+            height: 90vh;
+            margin-bottom: 5px;
+        }
+
+        .venue-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .venue-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Envelope Icon -->
+    <div class="envelope" onclick="openInvitation()"></div>
+
+    <!-- First Image with Venue Button -->
+    <div class="image-container" id="imageContainer">
+        <img src="Frontpage.png" id="firstImage" alt="Frontpage Invitation">
+    </div>
+    <!-- <button class="venue-button" id="venue-button" onclick="showVenue()">Venue</button> -->
+    <button class="venue-button" id="venue-button" onclick="toggleContainers()">Venue</button>
+
+
+
+
+    <!-- Venue Image -->
+    <div id="venueContainer" class="image-container">
+        <img src="invitation.png" alt="Venue Details" class="venue-image">
+    </div>
+
+    <script>
+        function openInvitation() {
+            // Hide the envelope icon
+            document.querySelector('.envelope').style.display = 'none';
+
+            // Show the first image container with the Venue button
+            document.getElementById('imageContainer').style.display = 'block';
+            document.getElementById('venue-button').style.display = 'block';
+        }
+
+        function toggleContainers() {
+    const imageContainer = document.getElementById('imageContainer');
+    const venueContainer = document.getElementById('venueContainer');
+    const venueButton = document.getElementById('venue-button');
+    
+    if (imageContainer.style.display === 'block') {
+        // Hide the first image container and show the venue container
+        imageContainer.style.display = 'none';
+        venueContainer.style.display = 'block';
+        venueButton.innerText = 'Back';
+    } else {
+        // Hide the venue container and show the first image container
+        venueContainer.style.display = 'none';
+        imageContainer.style.display = 'block';
+        venueButton.innerText = 'Venue';
+    }
+}
+    </script>
+
+</body>
+
+</html>
