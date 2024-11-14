@@ -18,9 +18,8 @@
         }
 
         .envelope {
-            width: 150px;
-            height: 150px;
-            background: url('https://image.shutterstock.com/image-vector/envelope-icon-vector-mail-symbol-260nw-1895748055.jpg') no-repeat center/contain;
+            width: auto;
+            height: auto;
             cursor: pointer;
             margin-bottom: 20px;
             transition: transform 0.3s;
@@ -66,7 +65,9 @@
 <body>
 
     <!-- Envelope Icon -->
-    <div class="envelope" onclick="openInvitation()"></div>
+    <div class="envelope" onclick="openInvitation()">
+        <img src="invitation.jpeg">
+    </div>
 
     <!-- First Image with Venue Button -->
     <div class="image-container" id="imageContainer">
